@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WEB MEDIA — веб-разработка и работа для junior-специалистов</title>
+<meta name="description" content="Растим разработчиков внутри компании. Обучение бесплатное, от junior до middle 1–2 года. Открыты позиции в разработке, тестировании, поддержке и работе с партнёрами.">
+<meta property="og:title" content="WEB MEDIA — веб-разработка и работа для junior-специалистов">
+<meta property="og:description" content="Растим разработчиков внутри компании. Обучение бесплатное, от junior до middle 1–2 года.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0A0A'/%3E%3Cpath d='M7 9l5 14 5-14' stroke='%23fff' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='23' cy='21.5' r='2.4' fill='%23FF4B00'/%3E%3C/svg%3E">
+
+<link rel="stylesheet" href="styles.css?v=20260821-principle-swipe-1">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="rings.js" defer></script>
+<script src="matrix-text.js" defer></script>
+<script src="main.js?v=20260821-principle-swipe-1" defer></script>
+<script src="company-bento.js?v=20260821-mobile-swipe-1" defer></script>
+<script src="bento-pointer.js?v=20260821-mobile-swipe-1" defer></script>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">WEB&nbsp;MEDIA<b>.</b></a>
+    <nav class="nav-links">
+      <a href="#company-story">О компании</a>
+      <a href="#principles">Принципы</a>
+      <a href="#areas">Направления</a>
+      <a href="#jobs">Вакансии</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <a href="#jobs" class="btn-white">Открытые позиции</a>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="top">
+  <div class="hero-glow"></div>
+
+  <div class="hero-stage">
+    <!-- Заголовок подрезан маской по силуэту фигуры: в референсе
+         фигура стоит перед текстом. Режется текст, не изображение. -->
+    <div class="hero-title-wrap">
+      <h1 class="hero-title">
+        <span class="line-1"><i>—</i> <span class="l1-text">Сильные специалисты</span> <i>—</i></span>
+        <span class="line-2">растут внутри команды</span>
+      </h1>
+    </div>
+
+    <!-- Кадр первого экрана целиком. Фигура не вырезана: изображение
+         используется как есть, поэтому у неё родное свечение и мягкий
+         край. Из кадра убран только чужой брендинг и зашитый текст. -->
+    <div class="hero-bg" aria-hidden="true">
+      <img src="hero.webp" alt="">
+    </div>
+
+    <div class="hero-side">
+      <span class="tag-mono">Наш подход</span>
+      <p class="hero-sub">Мы занимаемся веб-разработкой и тестированием. Вместо бесконечного поиска готовых специалистов мы создаём команду внутри: берём людей с хорошей базой, подключаем к реальным задачам и помогаем расти вместе с командой.</p>
+    </div>
+
+    <div class="hero-bottom">
+      <div class="hero-left">
+        <div class="pills">
+          <span class="pill">Веб-разработка</span>
+          <span class="pill">Тестирование</span>
+          <span class="pill">Обучение с нуля</span>
+        </div>
+        <div class="hero-cta">
+          <a href="#jobs" class="btn-read">Открытые позиции</a>
+          <a href="#principles" class="btn-play">Как мы работаем <i aria-hidden="true">▶</i></a>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hstat">
+          <b>2022</b>
+          <span>Год<br>основания</span>
+        </div>
+        <div class="hstat">
+          <b>1–2 <i>года</i></b>
+          <span>От junior<br>до middle</span>
+        </div>
+        <div class="hstat">
+          <b>5</b>
+          <span>Открытых<br>позиций</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Бегущая строка сфер, с которыми работали.
+       Дублируется скриптом, чтобы лента шла без стыка. -->
+  <div class="marquee" id="marquee" aria-label="Сферы, из которых к нам обращаются за веб-разработкой">
+    <span class="marquee-label">С кем работаем</span>
+    <div class="marquee-track">
+      <div class="marquee-row" id="marqueeRow">
+        <span>Интернет-магазины</span>
+        <span>SaaS-платформы</span>
+        <span>Финтех</span>
+        <span>Онлайн-образование</span>
+        <span>Маркетплейсы</span>
+        <span>Медицинские сервисы</span>
+        <span>Логистика и доставка</span>
+        <span>Недвижимость</span>
+        <span>Бронирование и туризм</span>
+        <span>Digital-агентства</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ ПРИНЦИПЫ — Модуль 02, Sticky Stack Narrative ══════════ -->
+<section class="section" id="principles">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag-mono">Как мы работаем</span>
+      <h2 class="sec-title">Принципы, <span class="dim">которые работают на практике</span></h2>
+    </div>
+
+    <div class="stack-container">
+      <div class="stack-visual">
+        <div class="panel">
+          <div class="panel-bar"><span>web&nbsp;media — принцип 0<b id="panelNum">1</b></span></div>
+          <svg class="panel-wave" viewBox="0 0 600 300" fill="none" preserveAspectRatio="xMaxYMin slice" aria-hidden="true"><defs><linearGradient id="wg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FF4B00" stop-opacity="0"/><stop offset=".30" stop-color="#FF5E12" stop-opacity=".45"/><stop offset=".58" stop-color="#FFC48F" stop-opacity="1"/><stop offset=".78" stop-color="#FF6A1A" stop-opacity=".9"/><stop offset="1" stop-color="#FF4B00" stop-opacity=".35"/></linearGradient><radialGradient id="wh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFE2C4" stop-opacity=".7"/><stop offset=".5" stop-color="#FF6A1A" stop-opacity=".18"/><stop offset="1" stop-color="#FF4B00" stop-opacity="0"/></radialGradient></defs><path d="M-20 118.0 C 116 40.0, 250 236.0, 384 52.0 S 552 26.0, 620 14.0" stroke="url(#wg)" stroke-width=".75" opacity="0.100"/><path d="M-20 120.3 C 116 41.5, 250 237.0, 384 52.7 S 552 26.4, 620 14.3" stroke="url(#wg)" stroke-width=".75" opacity="0.104"/><path d="M-20 122.6 C 116 42.9, 250 238.0, 384 53.3 S 552 26.8, 620 14.6" stroke="url(#wg)" stroke-width=".75" opacity="0.112"/><path d="M-20 124.9 C 116 44.4, 250 239.1, 384 54.0 S 552 27.2, 620 14.9" stroke="url(#wg)" stroke-width=".75" opacity="0.122"/><path d="M-20 127.3 C 116 45.8, 250 240.1, 384 54.7 S 552 27.6, 620 15.3" stroke="url(#wg)" stroke-width=".75" opacity="0.135"/><path d="M-20 129.6 C 116 47.3, 250 241.1, 384 55.3 S 552 28.0, 620 15.6" stroke="url(#wg)" stroke-width=".75" opacity="0.150"/><path d="M-20 131.9 C 116 48.7, 250 242.1, 384 56.0 S 552 28.4, 620 15.9" stroke="url(#wg)" stroke-width=".75" opacity="0.167"/><path d="M-20 134.2 C 116 50.2, 250 243.1, 384 56.7 S 552 28.7, 620 16.2" stroke="url(#wg)" stroke-width=".75" opacity="0.186"/><path d="M-20 136.5 C 116 51.6, 250 244.2, 384 57.3 S 552 29.1, 620 16.5" stroke="url(#wg)" stroke-width=".75" opacity="0.206"/><path d="M-20 138.8 C 116 53.1, 250 245.2, 384 58.0 S 552 29.5, 620 16.8" stroke="url(#wg)" stroke-width=".75" opacity="0.228"/><path d="M-20 141.1 C 116 54.5, 250 246.2, 384 58.7 S 552 29.9, 620 17.1" stroke="url(#wg)" stroke-width=".75" opacity="0.252"/><path d="M-20 143.5 C 116 56.0, 250 247.2, 384 59.3 S 552 30.3, 620 17.5" stroke="url(#wg)" stroke-width=".75" opacity="0.277"/><path d="M-20 145.8 C 116 57.4, 250 248.2, 384 60.0 S 552 30.7, 620 17.8" stroke="url(#wg)" stroke-width=".75" opacity="0.304"/><path d="M-20 148.1 C 116 58.9, 250 249.3, 384 60.7 S 552 31.1, 620 18.1" stroke="url(#wg)" stroke-width=".75" opacity="0.331"/><path d="M-20 150.4 C 116 60.3, 250 250.3, 384 61.3 S 552 31.5, 620 18.4" stroke="url(#wg)" stroke-width=".75" opacity="0.361"/><path d="M-20 152.7 C 116 61.8, 250 251.3, 384 62.0 S 552 31.9, 620 18.7" stroke="url(#wg)" stroke-width=".75" opacity="0.391"/><path d="M-20 155.0 C 116 63.2, 250 252.3, 384 62.7 S 552 32.3, 620 19.0" stroke="url(#wg)" stroke-width=".75" opacity="0.423"/><path d="M-20 157.3 C 116 64.7, 250 253.3, 384 63.3 S 552 32.7, 620 19.3" stroke="url(#wg)" stroke-width=".75" opacity="0.455"/><path d="M-20 159.6 C 116 66.1, 250 254.4, 384 64.0 S 552 33.1, 620 19.6" stroke="url(#wg)" stroke-width=".75" opacity="0.489"/><path d="M-20 162.0 C 116 67.6, 250 255.4, 384 64.7 S 552 33.5, 620 20.0" stroke="url(#wg)" stroke-width=".75" opacity="0.525"/><path d="M-20 164.3 C 116 69.0, 250 256.4, 384 65.3 S 552 33.8, 620 20.3" stroke="url(#wg)" stroke-width=".75" opacity="0.561"/><path d="M-20 166.6 C 116 70.5, 250 257.4, 384 66.0 S 552 34.2, 620 20.6" stroke="url(#wg)" stroke-width=".75" opacity="0.598"/><path d="M-20 168.9 C 116 71.9, 250 258.4, 384 66.7 S 552 34.6, 620 20.9" stroke="url(#wg)" stroke-width=".75" opacity="0.637"/><path d="M-20 171.2 C 116 73.4, 250 259.5, 384 67.3 S 552 35.0, 620 21.2" stroke="url(#wg)" stroke-width=".75" opacity="0.677"/><path d="M-20 173.5 C 116 74.8, 250 260.5, 384 68.0 S 552 35.4, 620 21.5" stroke="url(#wg)" stroke-width=".75" opacity="0.717"/><path d="M-20 175.8 C 116 76.3, 250 261.5, 384 68.7 S 552 35.8, 620 21.8" stroke="url(#wg)" stroke-width=".75" opacity="0.759"/><path d="M-20 178.2 C 116 77.7, 250 262.5, 384 69.3 S 552 36.2, 620 22.2" stroke="url(#wg)" stroke-width=".75" opacity="0.759"/><path d="M-20 180.5 C 116 79.2, 250 263.5, 384 70.0 S 552 36.6, 620 22.5" stroke="url(#wg)" stroke-width=".75" opacity="0.717"/><path d="M-20 182.8 C 116 80.6, 250 264.5, 384 70.7 S 552 37.0, 620 22.8" stroke="url(#wg)" stroke-width=".75" opacity="0.677"/><path d="M-20 185.1 C 116 82.1, 250 265.6, 384 71.3 S 552 37.4, 620 23.1" stroke="url(#wg)" stroke-width=".75" opacity="0.637"/><path d="M-20 187.4 C 116 83.5, 250 266.6, 384 72.0 S 552 37.8, 620 23.4" stroke="url(#wg)" stroke-width=".75" opacity="0.598"/><path d="M-20 189.7 C 116 85.0, 250 267.6, 384 72.7 S 552 38.2, 620 23.7" stroke="url(#wg)" stroke-width=".75" opacity="0.561"/><path d="M-20 192.0 C 116 86.4, 250 268.6, 384 73.3 S 552 38.5, 620 24.0" stroke="url(#wg)" stroke-width=".75" opacity="0.525"/><path d="M-20 194.4 C 116 87.9, 250 269.6, 384 74.0 S 552 38.9, 620 24.4" stroke="url(#wg)" stroke-width=".75" opacity="0.489"/><path d="M-20 196.7 C 116 89.3, 250 270.7, 384 74.7 S 552 39.3, 620 24.7" stroke="url(#wg)" stroke-width=".75" opacity="0.455"/><path d="M-20 199.0 C 116 90.8, 250 271.7, 384 75.3 S 552 39.7, 620 25.0" stroke="url(#wg)" stroke-width=".75" opacity="0.423"/><path d="M-20 201.3 C 116 92.2, 250 272.7, 384 76.0 S 552 40.1, 620 25.3" stroke="url(#wg)" stroke-width=".75" opacity="0.391"/><path d="M-20 203.6 C 116 93.7, 250 273.7, 384 76.7 S 552 40.5, 620 25.6" stroke="url(#wg)" stroke-width=".75" opacity="0.361"/><path d="M-20 205.9 C 116 95.1, 250 274.7, 384 77.3 S 552 40.9, 620 25.9" stroke="url(#wg)" stroke-width=".75" opacity="0.331"/><path d="M-20 208.2 C 116 96.6, 250 275.8, 384 78.0 S 552 41.3, 620 26.2" stroke="url(#wg)" stroke-width=".75" opacity="0.304"/><path d="M-20 210.5 C 116 98.0, 250 276.8, 384 78.7 S 552 41.7, 620 26.5" stroke="url(#wg)" stroke-width=".75" opacity="0.277"/><path d="M-20 212.9 C 116 99.5, 250 277.8, 384 79.3 S 552 42.1, 620 26.9" stroke="url(#wg)" stroke-width=".75" opacity="0.252"/><path d="M-20 215.2 C 116 100.9, 250 278.8, 384 80.0 S 552 42.5, 620 27.2" stroke="url(#wg)" stroke-width=".75" opacity="0.228"/><path d="M-20 217.5 C 116 102.4, 250 279.8, 384 80.7 S 552 42.9, 620 27.5" stroke="url(#wg)" stroke-width=".75" opacity="0.206"/><path d="M-20 219.8 C 116 103.8, 250 280.9, 384 81.3 S 552 43.3, 620 27.8" stroke="url(#wg)" stroke-width=".75" opacity="0.186"/><path d="M-20 222.1 C 116 105.3, 250 281.9, 384 82.0 S 552 43.6, 620 28.1" stroke="url(#wg)" stroke-width=".75" opacity="0.167"/><path d="M-20 224.4 C 116 106.7, 250 282.9, 384 82.7 S 552 44.0, 620 28.4" stroke="url(#wg)" stroke-width=".75" opacity="0.150"/><path d="M-20 226.7 C 116 108.2, 250 283.9, 384 83.3 S 552 44.4, 620 28.7" stroke="url(#wg)" stroke-width=".75" opacity="0.135"/><path d="M-20 229.1 C 116 109.6, 250 284.9, 384 84.0 S 552 44.8, 620 29.1" stroke="url(#wg)" stroke-width=".75" opacity="0.122"/><path d="M-20 231.4 C 116 111.1, 250 286.0, 384 84.7 S 552 45.2, 620 29.4" stroke="url(#wg)" stroke-width=".75" opacity="0.112"/><path d="M-20 233.7 C 116 112.5, 250 287.0, 384 85.3 S 552 45.6, 620 29.7" stroke="url(#wg)" stroke-width=".75" opacity="0.104"/><path d="M-20 236.0 C 116 114.0, 250 288.0, 384 86.0 S 552 46.0, 620 30.0" stroke="url(#wg)" stroke-width=".75" opacity="0.100"/><ellipse cx="432" cy="70" rx="74" ry="46" fill="url(#wh)"/></svg>
+          <div class="panel-body">
+
+            <div class="p-state active" data-state="1">
+              <div class="p-compare">
+                <div class="p-col">
+                  <span class="p-k">Искать готового специалиста</span>
+                  <span class="p-v">дороже</span>
+                  <span class="p-n">и не всегда надолго</span>
+                </div>
+                <div class="p-div"></div>
+                <div class="p-col accent">
+                  <span class="p-k">Развивать внутри команды</span>
+                  <span class="p-v">надёжнее</span>
+                  <span class="p-n">понимает продукт, процессы и стандарты работы</span>
+                </div>
+              </div>
+              <div class="p-grades">
+                <div class="pg"><span class="pg-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></span><span class="pg-t"><b>Junior</b>старт</span></div><div class="pg"><span class="pg-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M7 21V11"/><path d="M12 21V6"/><path d="M17 21v-7"/></svg></span><span class="pg-t"><b>Middle</b>рост по результатам и навыкам</span></div><div class="pg pg--hot"><span class="pg-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.47 6.04.88-4.37 4.26 1.03 6.02L12 16.77l-5.4 2.86 1.03-6.02L3.26 9.35l6.04-.88z"/></svg></span><span class="pg-t"><b>Следующий грейд</b>по понятным критериям</span></div>
+              </div>
+            </div>
+
+            <div class="p-state" data-state="2">
+              <div class="p-steps">
+                <span class="p-rail" aria-hidden="true"></span>
+                <div class="ps"><span class="ps-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></span><span class="ps-t">Junior</span><span class="ps-d">осваивает процессы и набирается практики</span></div><div class="ps ps--hot"><span class="ps-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M7 21V11"/><path d="M12 21V6"/><path d="M17 21v-7"/></svg></span><span class="ps-t">Middle</span><span class="ps-d">самостоятельно ведёт более сложные задачи</span></div><div class="ps"><span class="ps-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.6"/></svg></span><span class="ps-t">Дальше</span><span class="ps-d">рост по результатам, ответственности и компетенциям</span></div>
+              </div>
+            </div>
+
+            <div class="p-state" data-state="3">
+              <div class="p-timing">
+                <div class="p-time bad"><span class="t">2 дня</span><span class="d">разбираться молча</span></div>
+                <div class="p-time good">
+                  <span class="t">1 час</span>
+                  <span class="d">попробовать самому и задать вопрос</span>
+                  <span class="p-chat"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/><circle cx="9" cy="10" r="1"/><circle cx="12.5" cy="10" r="1"/><circle cx="16" cy="10" r="1"/></svg></span>
+                </div>
+              </div>
+              <div class="p-note p-note--marks">У каждого специалиста на старте есть человек, к которому можно обратиться за разбором задачи, обратной связью или помощью с процессом</div>
+            </div>
+
+            <div class="p-state" data-state="4">
+              <ul class="p-list">
+                <li><span class="pl-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.4 2.4 4.6-4.8"/></svg></span>Формат работы</li>
+                <li><span class="pl-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.4 2.4 4.6-4.8"/></svg></span>Оформление</li>
+                <li><span class="pl-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.4 2.4 4.6-4.8"/></svg></span>График</li>
+                <li><span class="pl-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.4 2.4 4.6-4.8"/></svg></span>Задачи и зона ответственности</li>
+                <li><span class="pl-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.4 2.4 4.6-4.8"/></svg></span>Выплаты</li>
+                <li><span class="pl-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.4 2.4 4.6-4.8"/></svg></span>Этапы адаптации</li>
+              </ul>
+              <div class="p-note">До первого рабочего дня вы знаете, как будет устроена работа</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-features">
+        <article class="feature-card active" data-feature="1" tabindex="0">
+          <div class="fc-in">
+
+            <div class="fc-face fc-front">
+              <div class="fc-pulse" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="fc-top">
+                <div class="feature-num">01</div>
+                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 3-3 3 3"/><path d="M13 18H7a2 2 0 0 1-2-2V6"/><path d="m22 15-3 3-3-3"/><path d="M11 6h6a2 2 0 0 1 2 2v10"/></svg>
+              </div>
+              <h3>Развиваем специалистов внутри</h3>
+              <p>Сильного специалиста можно долго искать на рынке, а можно помочь ему вырасти внутри компании. Поэтому мы даём junior-разработчикам и тестировщикам реальные задачи, поддержку наставника и понятный маршрут развития.</p>
+            </div>
+
+            <div class="fc-face fc-back">
+              <div class="fc-top">
+                <div class="feature-num">01</div>
+                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 3-3 3 3"/><path d="M13 18H7a2 2 0 0 1-2-2V6"/><path d="m22 15-3 3-3-3"/><path d="M11 6h6a2 2 0 0 1 2 2v10"/></svg>
+              </div>
+              <ul class="fc-list">
+                <li style="--i:0"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span>Знает внутренние процессы</span></li>
+                <li style="--i:1"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span>Работает по стандартам команды</span></li>
+                <li style="--i:2"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span>Растёт вместе с проектами</span></li>
+              </ul>
+            </div>
+
+          </div>
+        </article>
+
+        <article class="feature-card" data-feature="2" tabindex="0">
+          <div class="fc-in">
+
+            <div class="fc-face fc-front">
+              <div class="fc-pulse" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="fc-top">
+                <div class="feature-num">02</div>
+                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 3-3 3 3"/><path d="M13 18H7a2 2 0 0 1-2-2V6"/><path d="m22 15-3 3-3-3"/><path d="M11 6h6a2 2 0 0 1 2 2v10"/></svg>
+              </div>
+              <h3>Грейд зависит от навыков, а не от настроения руководителя</h3>
+              <p>У каждого уровня есть понятные требования. Вы знаете, какие навыки уже закрыты, над чем ещё нужно поработать и что требуется для перехода дальше.</p>
+            </div>
+
+            <div class="fc-face fc-back">
+              <div class="fc-top">
+                <div class="feature-num">02</div>
+                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 3-3 3 3"/><path d="M13 18H7a2 2 0 0 1-2-2V6"/><path d="m22 15-3 3-3-3"/><path d="M11 6h6a2 2 0 0 1 2 2v10"/></svg>
+              </div>
+              <ul class="fc-list">
+                <li style="--i:0"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span>Понятные требования</span></li>
+                <li style="--i:1"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span>Прозрачный рост</span></li>
+                <li style="--i:2"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span>Без субъективных обещаний</span></li>
+              </ul>
+            </div>
+
+          </div>
+        </article>
+
+        <article class="feature-card" data-feature="3" tabindex="0">
+          <div class="fc-in">
+
+            <div class="fc-face fc-front">
+              <div class="fc-pulse" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="fc-top">
+                <div class="feature-num">03</div>
+                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 3-3 3 3"/><path d="M13 18H7a2 2 0 0 1-2-2V6"/><path d="m22 15-3 3-3-3"/><path d="M11 6h6a2 2 0 0 1 2 2v10"/></svg>
+              </div>
+              <h3>Лучше спросить, чем потерять два дня</h3>
+              <p>Новичок не должен делать вид, что знает всё. Если задача непонятна или возник тупик — нормально обратиться за помощью.</p>
+            </div>
+
+            <div class="fc-face fc-back">
+              <div class="fc-top">
+                <div class="feature-num">03</div>
+                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 3-3 3 3"/><path d="M13 18H7a2 2 0 0 1-2-2V6"/><path d="m22 15-3 3-3-3"/><path d="M11 6h6a2 2 0 0 1 2 2v10"/></svg>
+              </div>
+              <ul class="fc-list">
+                <li style="--i:0"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span>Вопросы — часть работы</span></li>
+                <li style="--i:1"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span>Ошибки разбираем, а не прячем</span></li>
+                <li style="--i:2"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span>Наставник помогает двигаться дальше</span></li>
+              </ul>
+            </div>
+
+          </div>
+        </article>
+
+        <article class="feature-card" data-feature="4" tabindex="0">
+          <div class="fc-in">
+
+            <div class="fc-face fc-front">
+              <div class="fc-pulse" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="fc-top">
+                <div class="feature-num">04</div>
+                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 3-3 3 3"/><path d="M13 18H7a2 2 0 0 1-2-2V6"/><path d="m22 15-3 3-3-3"/><path d="M11 6h6a2 2 0 0 1 2 2v10"/></svg>
+              </div>
+              <h3>Все условия обсуждаем заранее</h3>
+              <p>До начала работы вы понимаете, на каких условиях заходите в команду. Без неожиданных условий после выхода и формулировок «об этом расскажем потом».</p>
+            </div>
+
+            <div class="fc-face fc-back">
+              <div class="fc-top">
+                <div class="feature-num">04</div>
+                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 3-3 3 3"/><path d="M13 18H7a2 2 0 0 1-2-2V6"/><path d="m22 15-3 3-3-3"/><path d="M11 6h6a2 2 0 0 1 2 2v10"/></svg>
+              </div>
+              <ul class="fc-list fc-list--two">
+                <li style="--i:0"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span>Формат работы</span></li>
+                <li style="--i:1"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span>Оформление</span></li>
+                <li style="--i:2"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span>График</span></li>
+                <li style="--i:3"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span>Задачи и зона ответственности</span></li>
+                <li style="--i:4"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span>Выплаты</span></li>
+                <li style="--i:5"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span>Этапы адаптации</span></li>
+              </ul>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ НАПРАВЛЕНИЯ — Модуль 11, Accordion Slider ══════════ -->
+<section class="section" id="areas">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag-mono">Чем занимаемся</span>
+      <h2 class="sec-title">Направления</h2>
+    </div>
+
+    <div class="accordion" id="accordion">
+      <div class="acc-panel acc-panel--image active">
+        <div class="acc-bg" aria-hidden="true"><img src="assets/directions/web-development.webp" alt="" loading="lazy" decoding="async"></div>
+        <div class="acc-glyph" aria-hidden="true">&lt;/&gt;</div>
+        <div class="acc-vert">Веб-разработка</div>
+        <div class="acc-content">
+          <div class="acc-head">
+            <div class="acc-num">01</div>
+            <div class="acc-h3">Веб-разработка</div>
+            <div class="acc-desc">Frontend и backend веб-приложений: интерфейсы, серверная логика, API, работа с данными.</div>
+            <div class="acc-tags"><span><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 17-5-5 5-5"/><path d="m15 7 5 5-5 5"/></svg>Современные технологии</span><span><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg>Масштабируемая архитектура</span><span><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.2 2.9 7.8 7 9 4.1-1.2 7-4.8 7-9V6z"/></svg>Надёжные решения</span></div>
+          </div>
+          <div class="acc-flow">
+            <div class="af-label">Архитектура решения</div>
+            <div class="af-row"><div class="af"><span class="af-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></svg></span><b>Frontend</b><em>Интерфейс пользователя</em></div><span class="af-ar" aria-hidden="true">→</span><div class="af"><span class="af-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span><b>Backend</b><em>Серверная логика</em></div><span class="af-ar" aria-hidden="true">→</span><div class="af"><span class="af-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3c-2 0-2 2-2 3s0 3-2 3c2 0 2 2 2 3s0 3 2 3"/><path d="M16 3c2 0 2 2 2 3s0 3 2 3c-2 0-2 2-2 3s0 3-2 3"/></svg></span><b>API</b><em>Интеграция и обмен</em></div><span class="af-ar" aria-hidden="true">→</span><div class="af"><span class="af-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span><b>Data</b><em>Хранение и обработка</em></div></div>
+          </div>
+          <div class="acc-feats"><div class="ff"><span class="ff-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 0 0-2.9-.1z"/><path d="m12 15-3-3a22 22 0 0 1 2-4A12.9 12.9 0 0 1 22 2c0 2.7-.8 7.5-6 11a22 22 0 0 1-4 2z"/><path d="M9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0"/><path d="M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></svg></span>Высокая производительность</div><div class="ff"><span class="ff-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>Безопасность</div><div class="ff"><span class="ff-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M7 21V11"/><path d="M12 21V6"/><path d="M17 21v-7"/></svg></span>Масштабируемость</div><div class="ff"><span class="ff-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 17-5-5 5-5"/><path d="m15 7 5 5-5 5"/></svg></span>Чистый код</div></div>
+        </div>
+      </div>
+
+      <div class="acc-panel acc-panel--image">
+        <div class="acc-bg" aria-hidden="true"><img src="assets/directions/testing-analytics.webp" alt="" loading="lazy" decoding="async"></div>
+        <div class="acc-glyph" aria-hidden="true">✓</div>
+        <div class="acc-vert">Тестирование</div>
+        <div class="acc-content">
+          <div class="acc-head">
+            <div class="acc-num">02</div>
+            <div class="acc-h3">Тестирование и аналитика</div>
+            <div class="acc-desc">Проверяем продукт до того, как его увидит клиент: кнопки, формы, сценарии, баги.</div>
+            <div class="acc-tags"><span><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.4 2.4 4.6-4.8"/></svg>Качество и надёжность</span><span><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="7" width="8" height="12" rx="4"/><path d="M8 11H4M20 11h-4M8 16H4M20 16h-4M9 7 7.5 4M15 7l1.5-3"/></svg>Поиск и фиксация багов</span><span><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M7 21V11"/><path d="M12 21V6"/><path d="M17 21v-7"/></svg>Данные для решений</span></div>
+          </div>
+          <div class="acc-flow">
+            <div class="af-label">Процесс тестирования</div>
+            <div class="af-row"><div class="af"><span class="af-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg></span><b>Планирование</b><em>Цели и приоритеты</em></div><span class="af-ar" aria-hidden="true">→</span><div class="af"><span class="af-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span><b>Тестирование</b><em>UI, API, логика</em></div><span class="af-ar" aria-hidden="true">→</span><div class="af"><span class="af-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="7" width="8" height="12" rx="4"/><path d="M8 11H4M20 11h-4M8 16H4M20 16h-4M9 7 7.5 4M15 7l1.5-3"/></svg></span><b>Баг-репорты</b><em>Фиксируем и описываем</em></div><span class="af-ar" aria-hidden="true">→</span><div class="af"><span class="af-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11A8 8 0 0 0 6.3 6.3L4 8.5"/><path d="M4 5v3.5h3.5"/><path d="M4 13a8 8 0 0 0 13.7 4.7L20 15.5"/><path d="M20 19v-3.5h-3.5"/></svg></span><b>Регрессия</b><em>Проверяем стабильность</em></div></div>
+          </div>
+          <div class="acc-feats"><div class="ff"><span class="ff-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></svg></span>UI-тесты</div><div class="ff"><span class="ff-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span>Сценарии</div><div class="ff"><span class="ff-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="7" width="8" height="12" rx="4"/><path d="M8 11H4M20 11h-4M8 16H4M20 16h-4M9 7 7.5 4M15 7l1.5-3"/></svg></span>Баг-репорты</div><div class="ff"><span class="ff-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M7 21V11"/><path d="M12 21V6"/><path d="M17 21v-7"/></svg></span>Метрики</div></div>
+        </div>
+      </div>
+
+      <div class="acc-panel acc-panel--image">
+        <div class="acc-bg" aria-hidden="true"><img src="assets/directions/partners.webp" alt="" loading="lazy" decoding="async"></div>
+        <div class="acc-glyph" aria-hidden="true">◈</div>
+        <div class="acc-vert">Партнёры</div>
+        <div class="acc-content">
+          <div class="acc-head">
+            <div class="acc-num">03</div>
+            <div class="acc-h3">Работа с партнёрами</div>
+            <div class="acc-desc">Разбираемся в задаче партнёра до старта: что нужно, к какому сроку и в каком бюджете.</div>
+            <div class="acc-tags"><span><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="9" r="2.5"/><path d="M16 14.5c2.8.2 5 2.6 5 5.5"/></svg>Партнёрский подход</span><span><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/></svg>Прозрачная коммуникация</span><span><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></svg>Долгосрочное сотрудничество</span></div>
+          </div>
+          <div class="acc-flow">
+            <div class="af-label">Процесс работы</div>
+            <div class="af-row"><div class="af"><span class="af-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/></svg></span><b>Знакомство</b><em>Обсуждаем идею и цели</em></div><span class="af-ar" aria-hidden="true">→</span><div class="af"><span class="af-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg></span><b>Погружение</b><em>Анализируем задачу</em></div><span class="af-ar" aria-hidden="true">→</span><div class="af"><span class="af-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span><b>Предложение</b><em>Решение и план работ</em></div><span class="af-ar" aria-hidden="true">→</span><div class="af"><span class="af-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4 20 10 9 21H3v-6z"/><path d="m13 5 6 6"/></svg></span><b>Старт проекта</b><em>Фиксируем договорённости</em></div></div>
+          </div>
+          <div class="acc-feats"><div class="ff"><span class="ff-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.6"/></svg></span>Цели</div><div class="ff"><span class="ff-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>Сроки</div><div class="ff"><span class="ff-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><circle cx="17" cy="14" r="1.2"/></svg></span>Бюджет</div><div class="ff"><span class="ff-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 4v10l-8 4-8-4V7z"/><path d="m4 7 8 4 8-4M12 11v10"/></svg></span>Объём работ</div></div>
+        </div>
+      </div>
+
+      <div class="acc-panel acc-panel--image">
+        <div class="acc-bg" aria-hidden="true"><img src="assets/directions/internal-school.webp" alt="" loading="lazy" decoding="async"></div>
+        <div class="acc-glyph" aria-hidden="true">↗</div>
+        <div class="acc-vert">Школа</div>
+        <div class="acc-content">
+          <div class="acc-head">
+            <div class="acc-num">04</div>
+            <div class="acc-h3">Внутренняя школа</div>
+            <div class="acc-desc">Собственный трек обучения: от нуля до боевых задач в проекте и дальше по грейдам.</div>
+            <div class="acc-tags"><span><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 4 10 5-10 5L2 9z"/><path d="M6 11.5V17c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.5"/></svg>Структурная программа</span><span><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.6"/></svg>Практика в проектах</span><span><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="9" r="2.5"/><path d="M16 14.5c2.8.2 5 2.6 5 5.5"/></svg>Поддержка менторов</span></div>
+          </div>
+          <div class="acc-flow">
+            <div class="af-label">Трек обучения</div>
+            <div class="af-row"><div class="af"><span class="af-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m10 8.5 6 3.5-6 3.5z"/></svg></span><b>Старт</b><em>Вводный модуль</em></div><span class="af-ar" aria-hidden="true">→</span><div class="af"><span class="af-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 17-5-5 5-5"/><path d="m15 7 5 5-5 5"/></svg></span><b>Практика</b><em>Разбор реальных кейсов</em></div><span class="af-ar" aria-hidden="true">→</span><div class="af"><span class="af-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg></span><b>Ментор</b><em>Поддержка и ревью</em></div><span class="af-ar" aria-hidden="true">→</span><div class="af"><span class="af-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg></span><b>Проект</b><em>Боевые задачи в команде</em></div><span class="af-ar" aria-hidden="true">→</span><div class="af"><span class="af-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"/><path d="m6 20 6-6 6 6"/></svg></span><b>Грейд</b><em>Рост навыков и оплаты</em></div></div>
+          </div>
+          <div class="acc-feats"><div class="ff"><span class="ff-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 4 10 5-10 5L2 9z"/><path d="M6 11.5V17c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.5"/></svg></span>Обучение бесплатное</div><div class="ff"><span class="ff-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg></span>Наставник с первого дня</div><div class="ff"><span class="ff-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg></span>Практика на проектах</div><div class="ff"><span class="ff-i"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"/><path d="m6 20 6-6 6 6"/></svg></span>Рост по грейдам</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ВАКАНСИИ — Модуль 16, Spotlight Border Cards ══════════ -->
+<section class="section" id="jobs">
+  <div class="wrap">
+    <div class="sec-head wide">
+      <div>
+        <span class="tag-mono">Собираем команду</span>
+        <h2 class="sec-title">Открытые <span class="dim">позиции</span></h2>
+      </div>
+      <p class="sec-lede">Мы растём и добираем людей в разработку, в контроль качества, в поддержку, в работу с партнёрами и на обучение с нуля. Общий принцип у всех позиций один: опыт желателен, но необучаемость — единственное, чего мы не сможем исправить.</p>
+    </div>
+
+    <div class="bento-grid bento-section" id="bentoGrid">
+
+      <article class="bento-card" data-role="Backend-разработчик (junior)" tabindex="0">
+        <div class="bento-head">
+          <div class="chips"><span>Junior</span><span>Разработка</span><span>Наставник</span></div>
+          <svg class="bento-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
+        </div>
+        <div class="bento-body">
+          <h3>Backend-разработчик <em>(junior)</em></h3>
+          <p>Серверная логика, API, база данных. Пишете код, который держит продукт изнутри. Ждём базовое знание любого серверного языка и желание разбираться.</p>
+          <div class="pay"><b>110 000 – 130 000 ₽</b><span>на старте · рост до middle за 1–2 года</span></div>
+        </div>
+      </article>
+
+      <article class="bento-card" data-role="Frontend-разработчик (junior)" tabindex="0">
+        <div class="bento-head">
+          <div class="chips"><span>Junior</span><span>Разработка</span><span>Наставник</span></div>
+          <svg class="bento-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
+        </div>
+        <div class="bento-body">
+          <h3>Frontend-разработчик <em>(junior)</em></h3>
+          <p>Интерфейсы веб-приложений: вёрстка, компоненты, состояние, связка с API. Важнее аккуратность и внимание к деталям, чем длинный список технологий.</p>
+          <div class="pay"><b>110 000 – 130 000 ₽</b><span>на старте · рост до middle за 1–2 года</span></div>
+        </div>
+      </article>
+
+      <article class="bento-card bento-card--burnt" data-role="Обучение программированию" tabindex="0">
+        <div class="bento-head">
+          <div class="chips"><span>С нуля</span><span>Обучение</span><span>Карьерный рост</span></div>
+          <svg class="bento-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
+        </div>
+        <div class="bento-body">
+          <h3>Обучение программированию — с опытом и без</h3>
+          <p>Трек для тех, кто хочет войти в разработку. Наша цель — вырастить собственных программистов, поэтому мы учим под свои задачи и ведём человека по грейдам.</p>
+          <div class="pay"><b>Грейд и оплата — по итогам обучения</b><span>условия обсуждаются лично</span></div>
+        </div>
+      </article>
+
+      <article class="bento-card" data-role="Тестировщик / аналитик веб-приложений" tabindex="0">
+        <div class="bento-head">
+          <div class="chips"><span>Без опыта</span><span>Обучение 2–3 недели</span><span>Поддержка</span></div>
+          <svg class="bento-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
+        </div>
+        <div class="bento-body">
+          <h3>Тестировщик / аналитик веб-приложений</h3>
+          <p>Проверяете сайты до того, как их увидит клиент: какие кнопки работают, как всё ведёт себя с VPN и без, отправляется ли форма и куда она ведёт. Находите баги и описываете их команде.</p>
+          <div class="pay"><b>от 65 000 ₽</b><span>обучение 2–3 недели · бесплатно · опыт не нужен</span></div>
+        </div>
+      </article>
+
+      <article class="bento-card" data-role="Менеджер по работе с партнёрами" tabindex="0">
+        <div class="bento-head">
+          <div class="chips"><span>Без опыта</span><span>Обучение 1 месяц</span><span>Наставник</span></div>
+          <svg class="bento-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
+        </div>
+        <div class="bento-body">
+          <h3>Менеджер по работе с партнёрами</h3>
+          <p>Первый человек, с которым говорит будущий партнёр. Выясняете задачу, дедлайн и бюджет, собираете вводные и передаёте проект техническому директору.</p>
+          <div class="pay"><b>от 90 000 ₽</b><span>после обучения · наставник ещё 2–3 месяца</span></div>
+        </div>
+      </article>
+
+      <article class="bento-card" data-role="Оператор чат-поддержки / чат-менеджер" tabindex="0">
+        <div class="bento-head">
+          <div class="chips"><span>Без опыта</span><span>Обучение</span><span>С телефона или ПК</span></div>
+          <svg class="bento-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
+        </div>
+        <div class="bento-body">
+          <h3>Оператор чат-поддержки / чат-менеджер</h3>
+          <p>Отвечаете людям в переписке: кандидатам — на вопросы по вакансии, партнёрам — на текущие вопросы по проекту. Ничего продавать и звонить не нужно, все ответы есть в инструкции.</p>
+          <div class="pay"><b>55 000 – 65 000 ₽</b><span>опыт не нужен · работа с телефона, ПК или ноутбука</span></div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="bento-mobile-nav" aria-label="Навигация по вакансиям">
+      <p class="bento-mobile-nav__hint">Листайте вакансии <span id="bentoCarouselStatus" aria-live="polite">1 / 6</span></p>
+      <div class="bento-mobile-nav__buttons">
+        <button class="bento-mobile-nav__button" id="bentoPrev" type="button" aria-label="Предыдущая вакансия">
+          <svg class="bento-mobile-nav__icon bento-mobile-nav__icon--prev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
+        </button>
+        <button class="bento-mobile-nav__button" id="bentoNext" type="button" aria-label="Следующая вакансия">
+          <svg class="bento-mobile-nav__icon bento-mobile-nav__icon--next" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ СИСТЕМА РОСТА — Scroll Stack ══════════ -->
+<section class="growth-section" id="growth" aria-labelledby="growth-title">
+  <div class="wrap growth-intro">
+    <span class="growth-eyebrow">Как растёт специалист</span>
+    <div class="growth-intro__grid">
+      <h2 class="growth-title" id="growth-title">Рост — это система,<br><span>он строится на практике.</span></h2>
+      <div class="growth-factors" aria-labelledby="growth-factors-title">
+        <h3 id="growth-factors-title">Что влияет на профессиональный рост:</h3>
+        <div class="growth-factor-grid">
+          <article class="growth-factor">
+            <span>01</span>
+            <h4>Навыки</h4>
+          </article>
+          <article class="growth-factor">
+            <span>02</span>
+            <h4>Ответственность</h4>
+          </article>
+          <article class="growth-factor">
+            <span>03</span>
+            <h4>Результат</h4>
+          </article>
+          <article class="growth-factor">
+            <span>04</span>
+            <h4>Обратная связь</h4>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap growth-stack" aria-label="Путь роста специалиста">
+    <article class="growth-card" style="--stack-index:0" data-growth-step="01">
+      <img class="growth-card__image" src="assets/growth/01-start-v2.webp" alt="Андроид-специалист начинает подъём по ступеням профессионального роста" loading="lazy" decoding="async">
+      <div class="growth-card__veil" aria-hidden="true"></div>
+      <div class="growth-card__content">
+        <span class="growth-card__number">01 / 06</span>
+        <p class="growth-card__label">Точка входа</p>
+        <h3>Старт</h3>
+        <p class="growth-card__text">Фиксируем стартовую точку и начинаем работать на практике.</p>
+        <span class="growth-card__metric">Начало профессионального пути</span>
+      </div>
+    </article>
+
+    <article class="growth-card" style="--stack-index:1" data-growth-step="02">
+      <img class="growth-card__image" src="assets/growth/02-practice-v2.webp" alt="Андроид-специалист применяет знания в практической работе" loading="lazy" decoding="async">
+      <div class="growth-card__veil" aria-hidden="true"></div>
+      <div class="growth-card__content">
+        <span class="growth-card__number">02 / 06</span>
+        <p class="growth-card__label">Рабочий цикл</p>
+        <h3>Практика</h3>
+        <p class="growth-card__text">Знания превращаются в навык через применение в реальной работе.</p>
+        <span class="growth-card__metric">Навыки · практика</span>
+      </div>
+    </article>
+
+    <article class="growth-card" style="--stack-index:2" data-growth-step="03">
+      <img class="growth-card__image" src="assets/growth/03-mentor-v2.webp" alt="Наставник помогает специалисту разобрать рабочую задачу" loading="lazy" decoding="async">
+      <div class="growth-card__veil" aria-hidden="true"></div>
+      <div class="growth-card__content">
+        <span class="growth-card__number">03 / 06</span>
+        <p class="growth-card__label">Поддержка</p>
+        <h3>Поддержка наставника</h3>
+        <p class="growth-card__text">Регулярно обсуждаем работу и определяем точки развития.</p>
+        <span class="growth-card__metric">Помощь · обратная связь</span>
+      </div>
+    </article>
+
+    <article class="growth-card" style="--stack-index:3" data-growth-step="04">
+      <img class="growth-card__image" src="assets/growth/04-real-tasks-v2.webp" alt="Андроид-специалист выполняет и проверяет реальную рабочую задачу" loading="lazy" decoding="async">
+      <div class="growth-card__veil" aria-hidden="true"></div>
+      <div class="growth-card__content">
+        <span class="growth-card__number">04 / 06</span>
+        <p class="growth-card__label">Рабочая среда</p>
+        <h3>Реальные задачи</h3>
+        <p class="growth-card__text">Задачи становятся сложнее вместе с самостоятельностью и ответственностью.</p>
+        <span class="growth-card__metric">Практика · ответственность</span>
+      </div>
+    </article>
+
+    <article class="growth-card" style="--stack-index:4" data-growth-step="05">
+      <img class="growth-card__image" src="assets/growth/05-independent-result-v2.webp" alt="Андроид-специалист демонстрирует самостоятельно полученный результат" loading="lazy" decoding="async">
+      <div class="growth-card__veil" aria-hidden="true"></div>
+      <div class="growth-card__content">
+        <span class="growth-card__number">05 / 06</span>
+        <p class="growth-card__label">Проверка на деле</p>
+        <h3>Самостоятельный результат</h3>
+        <p class="growth-card__text">Специалист самостоятельно доводит задачу до результата.</p>
+        <span class="growth-card__metric">Самостоятельность · результат</span>
+      </div>
+    </article>
+
+    <article class="growth-card growth-card--result" style="--stack-index:5" data-growth-step="06">
+      <img class="growth-card__image" src="assets/growth/06-next-grade-v2.webp" alt="Андроид-специалист поднимается к следующему профессиональному уровню" loading="lazy" decoding="async">
+      <div class="growth-card__veil" aria-hidden="true"></div>
+      <div class="growth-card__content">
+        <span class="growth-card__number">06 / 06</span>
+        <p class="growth-card__label">Следующий уровень</p>
+        <h3>Следующий грейд</h3>
+        <p class="growth-card__text">Следующий грейд — результат профессионального развития.</p>
+        <span class="growth-card__metric">Итог · следующий уровень</span>
+      </div>
+    </article>
+
+    <div class="growth-stack-end" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- ══════════ ИНТЕРАКТИВНАЯ ИСТОРИЯ КОМПАНИИ ══════════ -->
+<section class="company-story" id="company-story" aria-labelledby="company-story-title">
+  <div class="wrap company-story__inner">
+    <div class="company-story__main" data-company-cursor-grid>
+      <canvas class="company-cursor-grid" aria-hidden="true"></canvas>
+      <div class="company-story__brand-block" aria-hidden="true">
+        <p class="company-story__brand">WEB<br>MEDIA<span>.</span></p>
+      </div>
+
+      <div class="company-story__copy">
+        <span class="company-story__eyebrow">О компании</span>
+        <h2 id="company-story-title">Сильные продукты начинаются с сильной команды</h2>
+        <div class="company-story__text">
+          <p>С 2022 года WEB MEDIA работает в сфере веб-разработки и тестирования. Мы сделали ставку не только на поиск специалистов, но и на их системное развитие внутри команды.</p>
+          <p>Специалисты растут через реальную работу, поддержку более опытных коллег и понятную систему грейдов, где следующий уровень определяется навыками, результатами и ответственностью.</p>
+          <p class="company-story__closing">WEB MEDIA — команда, которая развивается вместе с каждым новым проектом.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="company-system" data-company-system data-magic-bento>
+      <div class="company-system__top">
+        <span>Система развития команды</span>
+        <span id="companyStepCounter">01 / 06</span>
+      </div>
+
+      <div class="company-system__steps" role="group" aria-label="Этапы развития специалиста">
+        <div class="company-system__meter" aria-hidden="true"><span></span></div>
+        <button class="company-step active" type="button" data-company-step="0" aria-pressed="true"><span class="company-step__number">01</span><span class="company-step__marker"></span><span class="company-step__label">База</span></button>
+        <button class="company-step" type="button" data-company-step="1" aria-pressed="false"><span class="company-step__number">02</span><span class="company-step__marker"></span><span class="company-step__label">Практика</span></button>
+        <button class="company-step" type="button" data-company-step="2" aria-pressed="false"><span class="company-step__number">03</span><span class="company-step__marker"></span><span class="company-step__label">Наставник</span></button>
+        <button class="company-step" type="button" data-company-step="3" aria-pressed="false"><span class="company-step__number">04</span><span class="company-step__marker"></span><span class="company-step__label">Реальные задачи</span></button>
+        <button class="company-step" type="button" data-company-step="4" aria-pressed="false"><span class="company-step__number">05</span><span class="company-step__marker"></span><span class="company-step__label">Проекты</span></button>
+        <button class="company-step" type="button" data-company-step="5" aria-pressed="false"><span class="company-step__number">06</span><span class="company-step__marker"></span><span class="company-step__label">Рост</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ВЫБОР МАРШРУТА ══════════ -->
+<section class="audience-section" id="paths" aria-labelledby="paths-title">
+  <div class="wrap audience-wrap">
+    <div class="audience-head">
+      <span class="audience-eyebrow">Выберите свой маршрут</span>
+      <h2 class="audience-title" id="paths-title">Что привело вас<br>в <span>WEB MEDIA?</span></h2>
+    </div>
+
+    <div class="audience-grid">
+      <article class="audience-card audience-card--business">
+        <div class="audience-card__top">
+          <span class="audience-index" aria-hidden="true">01</span>
+          <span class="audience-kicker">Для бизнеса</span>
+        </div>
+        <div class="audience-card__body">
+          <h3>Нужно разработать или улучшить веб-продукт</h3>
+          <p>Frontend, backend, API, работа с данными, тестирование и аналитика.</p>
+        </div>
+        <a class="audience-cta" href="#areas">Посмотреть возможности</a>
+      </article>
+
+      <article class="audience-card audience-card--career">
+        <div class="audience-card__top">
+          <span class="audience-index" aria-hidden="true">02</span>
+          <span class="audience-kicker">Для специалиста</span>
+        </div>
+        <div class="audience-card__body">
+          <h3>Ищу работу или хочу развиваться в IT</h3>
+          <p>Открытые позиции, внутренняя школа, реальные задачи и система роста.</p>
+        </div>
+        <a class="audience-cta" href="#jobs">Перейти в карьеру</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ БРЕНДОВАЯ ПАУЗА — кольца и логотип ══════════ -->
+<section class="mask-section" id="about">
+  <div class="mask-sticky">
+    <div class="rings" id="rings" aria-hidden="true"></div>
+
+    <!-- Компактный логотип оставляет кольца видимыми по краям. -->
+    <div class="mask-logo" aria-label="WEB MEDIA">
+      <img src="webmedia.webp" alt="">
+      <span class="mask-dot" aria-hidden="true"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ОТКЛИК ══════════ -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="form-block">
+      <div class="form-left">
+        <span class="tag-mono">Отклик</span>
+        <h2 class="sec-title">Напишите <span class="dim">нам</span></h2>
+        <p class="form-intro">Выберите цель обращения — работа в WEB MEDIA или новый веб‑проект. Так заявка сразу попадёт нужному человеку.</p>
+        <ul class="contact-list">
+          <li><span>Telegram</span><span class="contact-list__value contact-list__value--pending">будет добавлен</span></li>
+                        <li><span>Почта</span><a href="mailto:owner@example.com">owner@example.com</a></li>
+          <li><span>Город</span><span class="contact-list__value">Калининград</span></li>
+        </ul>
+      </div>
+
+      <div class="form-workspace">
+        <div class="form-switch" role="tablist" aria-label="Тип обращения">
+          <button class="form-switch__button active" id="candidateTab" type="button" role="tab" aria-selected="true" aria-controls="candidatePanel" data-form-tab="candidatePanel">Для специалиста</button>
+          <button class="form-switch__button" id="projectTab" type="button" role="tab" aria-selected="false" aria-controls="projectPanel" data-form-tab="projectPanel">Для заказчика</button>
+        </div>
+
+        <div class="form-panel" id="candidatePanel" role="tabpanel" aria-labelledby="candidateTab">
+          <p class="form-panel__lead">Отклик на вакансию</p>
+          <form class="form" id="applyForm" novalidate>
+            <div class="field-row">
+              <div class="field">
+                <label for="f-name">Имя</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="f-contact">Telegram или почта</label>
+                <input id="f-contact" name="contact" type="text" autocomplete="email" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-role">На какую позицию</label>
+              <select id="f-role" name="role">
+                <option>Backend-разработчик (junior)</option>
+                <option>Frontend-разработчик (junior)</option>
+                <option>Тестировщик / аналитик веб-приложений</option>
+                <option>Менеджер по работе с партнёрами</option>
+                <option>Оператор чат-поддержки / чат-менеджер</option>
+                <option>Обучение программированию</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-msg">Пара слов о себе</label>
+              <textarea id="f-msg" name="message" rows="4"></textarea>
+            </div>
+            <label class="consent-field" for="f-consent">
+              <input id="f-consent" name="consent" type="checkbox" required>
+              <span>Я даю <button type="button" data-legal-open="consentDialog">согласие на обработку персональных данных</button>.</span>
+            </label>
+            <p class="form-legal-note">Перед отправкой ознакомьтесь с <button type="button" data-legal-open="privacyDialog">Политикой конфиденциальности</button>.</p>
+            <button class="btn-white full" type="submit">Отправить отклик</button>
+            <p class="form-note">Ответим в течение рабочего дня.</p>
+            <p class="form-status" id="formStatus" role="status"></p>
+          </form>
+        </div>
+
+        <div class="form-panel" id="projectPanel" role="tabpanel" aria-labelledby="projectTab" hidden>
+          <p class="form-panel__lead">Обсудить веб‑продукт</p>
+          <form class="form" id="projectForm" novalidate>
+            <div class="field-row">
+              <div class="field">
+                <label for="p-name">Имя</label>
+                <input id="p-name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="p-contact">Telegram или почта</label>
+                <input id="p-contact" name="contact" type="text" autocomplete="email" required>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="p-company">Компания или проект</label>
+                <input id="p-company" name="company" type="text" autocomplete="organization">
+              </div>
+              <div class="field">
+                <label for="p-service">Что нужно сделать</label>
+                <select id="p-service" name="service">
+                  <option>Разработать веб‑продукт</option>
+                  <option>Улучшить существующий продукт</option>
+                  <option>Frontend или backend</option>
+                  <option>API и работа с данными</option>
+                  <option>Тестирование и аналитика</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="p-msg">Задача, сроки и контекст</label>
+              <textarea id="p-msg" name="message" rows="5" required></textarea>
+            </div>
+            <label class="consent-field" for="p-consent">
+              <input id="p-consent" name="consent" type="checkbox" required>
+              <span>Я даю <button type="button" data-legal-open="consentDialog">согласие на обработку персональных данных</button>.</span>
+            </label>
+            <p class="form-legal-note">Перед отправкой ознакомьтесь с <button type="button" data-legal-open="privacyDialog">Политикой конфиденциальности</button>.</p>
+            <button class="btn-white full" type="submit">Отправить заявку</button>
+            <p class="form-note">Вернёмся с уточняющими вопросами в течение рабочего дня.</p>
+            <p class="form-status" id="projectFormStatus" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="logo">WEB&nbsp;MEDIA<b>.</b></div>
+        <p class="footer-desc">Веб-продукты и внутренняя школа разработки. Работаем с 2022 года.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="#company-story">О компании</a>
+        <a href="#principles">Принципы</a>
+        <a href="#areas">Направления</a>
+        <a href="#jobs">Вакансии</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+    </div>
+    <div class="wordmark" aria-hidden="true">web media</div>
+    <div class="footer-bottom">
+      <span>© 2022 WEB MEDIA</span>
+      <div class="footer-legal">
+        <button type="button" data-legal-open="privacyDialog">Политика конфиденциальности</button>
+        <button type="button" data-legal-open="consentDialog">Согласие на обработку данных</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<dialog class="legal-dialog" id="privacyDialog" aria-labelledby="privacyTitle">
+  <div class="legal-dialog__header">
+    <div>
+      <span>WEB MEDIA</span>
+      <h2 id="privacyTitle">Политика конфиденциальности</h2>
+    </div>
+    <button class="legal-dialog__close" type="button" data-legal-close aria-label="Закрыть">×</button>
+  </div>
+  <div class="legal-dialog__content">
+    <p>Настоящая Политика WEB MEDIA в отношении обработки персональных данных (далее — Политика) определяет порядок и условия обработки персональных данных посетителей сайта, кандидатов на вакансии, потенциальных заказчиков и иных лиц, которые обращаются в WEB MEDIA через формы сайта или по электронной почте.</p>
+
+    <h3>1. Общие положения</h3>
+    <p>Политика подготовлена с учётом Федерального закона от 27 июля 2006 года № 152‑ФЗ «О персональных данных» и применяется ко всей информации, которую WEB MEDIA получает от пользователей сайта. Используя сайт и направляя обращение, пользователь подтверждает, что ознакомился с настоящей Политикой. Согласие на обработку персональных данных предоставляется отдельно.</p>
+
+    <h3>2. Оператор и контакты</h3>
+            <p>Оператор персональных данных — WEB MEDIA. Город нахождения: Калининград. По вопросам обработки и защиты персональных данных, а также для направления запросов и отзыва согласия можно обратиться по адресу <a href="mailto:owner@example.com">owner@example.com</a>.</p>
+
+    <h3>3. Основные понятия</h3>
+    <p>Персональные данные — любая информация, относящаяся прямо или косвенно к определённому или определяемому физическому лицу. Обработка персональных данных — любое действие или совокупность действий с такими данными, включая сбор, запись, систематизацию, накопление, хранение, уточнение, извлечение, использование, передачу в предусмотренных законом случаях, обезличивание, блокирование, удаление и уничтожение.</p>
+
+    <h3>4. Какие данные могут обрабатываться</h3>
+    <p>WEB MEDIA обрабатывает только данные, необходимые для ответа на обращение и достижения заявленной пользователем цели:</p>
+    <ul>
+      <li>имя;</li>
+      <li>адрес электронной почты, имя пользователя в мессенджере или иной указанный контакт;</li>
+      <li>выбранная вакансия, сведения об опыте, навыках и информация, включённая кандидатом в сообщение;</li>
+      <li>название компании или проекта, вид услуги, ориентировочный бюджет, описание задачи, сроки и иная информация из заявки заказчика;</li>
+      <li>технические данные, автоматически передаваемые при использовании сайта: IP‑адрес, тип браузера и устройства, дата и время обращения, адрес запрошенной страницы, данные технических журналов сервера.</li>
+    </ul>
+    <p>WEB MEDIA не запрашивает через формы специальные категории персональных данных, сведения о судимости или биометрические персональные данные. Пользователю не следует указывать такие сведения в свободных полях.</p>
+
+    <h3>5. Цели обработки</h3>
+    <ul>
+      <li>приём, регистрация и рассмотрение отклика на вакансию;</li>
+      <li>связь с кандидатом, проведение предварительного отбора и обсуждение возможного сотрудничества;</li>
+      <li>приём и обработка запроса на разработку или улучшение веб‑продукта;</li>
+      <li>подготовка ответа, уточнение задачи, сроков и условий сотрудничества;</li>
+      <li>обеспечение стабильной и безопасной работы сайта, предупреждение злоупотреблений и техническая диагностика;</li>
+      <li>исполнение требований законодательства и защита законных интересов WEB MEDIA и пользователей.</li>
+    </ul>
+
+    <h3>6. Правовые основания обработки</h3>
+    <p>Правовыми основаниями являются отдельное согласие пользователя; действия по инициативе пользователя до заключения договора; заключение и исполнение договора, если он будет заключён; выполнение обязанностей, возложенных на WEB MEDIA законодательством; иные основания, предусмотренные законодательством Российской Федерации.</p>
+
+    <h3>7. Порядок и способы обработки</h3>
+    <p>Обработка может выполняться как с использованием средств автоматизации, так и без них. WEB MEDIA совершает с данными только те действия, которые необходимы для заявленных целей, соблюдает принципы законности, минимизации, точности и ограничения срока хранения и не использует данные для несовместимых целей.</p>
+
+    <h3>8. Передача и поручение обработки</h3>
+    <p>WEB MEDIA не распространяет персональные данные и не предоставляет их неопределённому кругу лиц. Доступ может предоставляться сотрудникам и подрядчикам WEB MEDIA в необходимом объёме, а также поставщикам хостинга, электронной почты, сервисов приёма форм и технической инфраструктуры, если это требуется для работы сайта и обработки обращения. Такие лица обязаны соблюдать конфиденциальность и обрабатывать данные только по поручению WEB MEDIA либо на ином законном основании.</p>
+    <p>Данные могут быть переданы государственным органам в случаях и порядке, прямо предусмотренных законодательством. Трансграничная передача не осуществляется без выполнения установленных законом требований.</p>
+
+    <h3>9. Сроки хранения и уничтожение</h3>
+    <p>Данные из обращения хранятся до достижения цели обработки, но не более одного года с момента последнего содержательного взаимодействия, если более длительный срок не требуется законом, договором или защитой законных интересов сторон. Технические журналы могут храниться до двенадцати месяцев.</p>
+    <p>После достижения цели или получения отзыва согласия WEB MEDIA прекращает обработку и уничтожает данные в срок, не превышающий тридцати дней, если отсутствует иное законное основание для их дальнейшей обработки.</p>
+
+    <h3>10. Защита персональных данных</h3>
+    <p>WEB MEDIA принимает необходимые правовые, организационные и технические меры: ограничивает доступ к данным, использует средства контроля доступа и защищённые каналы связи, учитывает носители и обращения, контролирует действия лиц, имеющих доступ к данным, создаёт резервные копии при необходимости и принимает меры для обнаружения и устранения инцидентов.</p>
+
+    <h3>11. Права пользователя</h3>
+            <p>Пользователь вправе получать сведения об обработке своих данных, требовать их уточнения, блокирования или удаления, требовать прекращения обработки, отзывать согласие, а также обжаловать действия WEB MEDIA в уполномоченный орган или суд. Запрос можно направить на <a href="mailto:owner@example.com">owner@example.com</a>. В запросе следует указать имя, контакт, использованный при обращении, суть требования и сведения, позволяющие подтвердить принадлежность данных заявителю.</p>
+
+    <h3>12. Файлы cookie и сторонние ресурсы</h3>
+    <p>Сайт может использовать технически необходимые файлы cookie и журналы сервера для корректной и безопасной работы. Рекламные и аналитические cookie не должны подключаться без отдельного информирования пользователя и получения согласия, когда оно требуется. При переходе на сторонний ресурс обработка данных регулируется документами соответствующего владельца.</p>
+
+    <h3>13. Локализация данных</h3>
+    <p>При сборе персональных данных граждан Российской Федерации через интернет WEB MEDIA обеспечивает их первичную запись, систематизацию, накопление, хранение, уточнение и извлечение с использованием баз данных, находящихся на территории Российской Федерации, кроме предусмотренных законом случаев.</p>
+
+    <h3>14. Изменение Политики</h3>
+    <p>WEB MEDIA вправе обновлять Политику при изменении законодательства, состава сервисов или процессов обработки. Новая редакция действует с момента размещения на сайте. Пользователям рекомендуется периодически проверять актуальность документа.</p>
+
+    <p class="legal-dialog__date">Редакция от 20 августа 2026 года.</p>
+  </div>
+</dialog>
+
+<dialog class="legal-dialog" id="consentDialog" aria-labelledby="consentTitle">
+  <div class="legal-dialog__header">
+    <div>
+      <span>WEB MEDIA</span>
+      <h2 id="consentTitle">Согласие на обработку персональных данных</h2>
+    </div>
+    <button class="legal-dialog__close" type="button" data-legal-close aria-label="Закрыть">×</button>
+  </div>
+  <div class="legal-dialog__content">
+    <p>Я, пользователь сайта, действуя свободно, своей волей и в своём интересе, подтверждаю, что предоставленные мной сведения являются достоверными, и даю WEB MEDIA конкретное, предметное, информированное, сознательное и однозначное согласие на обработку моих персональных данных на следующих условиях.</p>
+
+    <h3>1. Оператор</h3>
+            <p>Оператор персональных данных — WEB MEDIA, город Калининград. Контакт по вопросам обработки персональных данных: <a href="mailto:owner@example.com">owner@example.com</a>.</p>
+
+    <h3>2. Персональные данные</h3>
+    <p>Согласие распространяется на сведения, которые я указываю в выбранной форме:</p>
+    <ul>
+      <li>имя;</li>
+      <li>адрес электронной почты, имя пользователя в мессенджере или другой контакт для связи;</li>
+      <li>для отклика на вакансию — выбранная позиция, сведения об опыте, навыках и иная информация из сообщения;</li>
+      <li>для заявки на веб‑проект — название компании или проекта, выбранная услуга, ориентировочный бюджет, описание задачи, сроки и иная информация из сообщения.</li>
+    </ul>
+    <p>Я обязуюсь не передавать через форму специальные категории персональных данных, сведения о судимости, биометрические данные и персональные данные третьих лиц без законного основания.</p>
+
+    <h3>3. Цели обработки</h3>
+    <p>Для отклика на вакансию: регистрация и рассмотрение отклика, связь со мной, предварительный отбор, обсуждение вакансии, обучения или возможного сотрудничества.</p>
+    <p>Для заявки заказчика: регистрация и рассмотрение обращения, связь со мной, уточнение задачи, подготовка предложения и обсуждение возможного сотрудничества.</p>
+
+    <h3>4. Действия с данными</h3>
+    <p>Я разрешаю сбор, запись, систематизацию, накопление, хранение, уточнение, извлечение, использование, передачу лицам, действующим по поручению WEB MEDIA и обеспечивающим работу сайта или обработку обращения, обезличивание, блокирование, удаление и уничтожение данных.</p>
+
+    <h3>5. Способы обработки</h3>
+    <p>Обработка может осуществляться с использованием средств автоматизации или без них, а также смешанным способом. Распространение данных неопределённому кругу лиц настоящим Согласием не разрешается.</p>
+
+    <h3>6. Срок действия</h3>
+    <p>Согласие действует с момента установки отметки в поле согласия и отправки формы до достижения цели обработки, но не более одного года с даты последнего содержательного взаимодействия, либо до отзыва Согласия — в зависимости от того, что наступит раньше. Если по итогам обращения будет заключён договор или возникнет иное законное основание, отдельные данные могут обрабатываться в сроки, установленные законом или соответствующим основанием.</p>
+
+    <h3>7. Отзыв согласия</h3>
+            <p>Я могу отозвать Согласие, направив письмо на <a href="mailto:owner@example.com?subject=Отзыв%20согласия%20на%20обработку%20персональных%20данных">owner@example.com</a> с темой «Отзыв согласия на обработку персональных данных». В письме необходимо указать имя, контакт, использованный при отправке формы, и требование прекратить обработку.</p>
+    <p>После получения отзыва WEB MEDIA прекращает обработку и уничтожает данные в срок, не превышающий тридцати дней, если отсутствует другое законное основание для их обработки.</p>
+
+    <h3>8. Последствия отказа</h3>
+    <p>Без предоставления Согласия отправка и рассмотрение обращения через форму сайта невозможны, поскольку WEB MEDIA не сможет использовать указанный контакт и содержание заявки для ответа.</p>
+
+    <h3>9. Подтверждение</h3>
+    <p>Установка отдельной отметки рядом с текстом Согласия и последующая отправка формы подтверждают факт предоставления Согласия. Полный порядок обработки данных изложен в Политике конфиденциальности WEB MEDIA.</p>
+
+    <p class="legal-dialog__date">Редакция от 20 августа 2026 года.</p>
+  </div>
+</dialog>
+
+</body>
+</html>
