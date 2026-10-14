@@ -30,7 +30,10 @@ var PROJECT_FORM_ENDPOINT = '';
      элементе спорят друг с другом.                              */
   var MATRIX_HEADINGS = '.hero-title, .sec-title, .fc-front h3, .acc-h3, .bento-card h3';
 
-  if (window.MatrixText) {
+  // На узком экране эффект расшифровки на мгновение превращал крупные
+  // заголовки в плотную строку цифр. На телефоне важнее мгновенная
+  // читаемость и более лёгкий первый рендер.
+  if (window.MatrixText && window.innerWidth > 560) {
     MatrixText.init(MATRIX_HEADINGS, {
       initialDelay: 80,
       letterAnimationDuration: 280,
@@ -818,7 +821,10 @@ var PROJECT_FORM_ENDPOINT = '';
     function syncGrowthStack() {
       growthFrame = 0;
 
-      if (reduced) {
+      // На телефоне карточки идут обычной вертикальной лентой. Sticky-stack
+      // оставлял край предыдущей карточки поверх следующего раздела и
+      // требовал лишних пересчётов во время свайпа.
+      if (reduced || window.innerWidth <= 560) {
         growthCards.forEach(function (card) {
           card.style.transform = '';
           card.style.willChange = '';
