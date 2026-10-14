@@ -1960,8 +1960,26 @@ button,input,select,textarea{font:inherit;color:inherit}
   .hstat b i{font-size:9.5px}
   .sec-title{font-size:clamp(24px,7.4vw,34px)}
   .acc-h3{font-size:clamp(16px,4.6vw,21px)}
-  .p-compare{flex-direction:column}
+  /* The desktop panel overlays all four states inside a fixed-height stage.
+     On a phone the first state becomes taller because both the comparison
+     and grade cards stack. Keeping it absolutely positioned squeezed that
+     content into the desktop height, so headings collided and the last card
+     was clipped. Let the active state size the panel naturally on mobile. */
+  .panel-body{min-height:0;padding:0}
+  .p-state{
+    position:relative;inset:auto;display:none;
+    padding:24px 18px 26px;gap:20px;
+    opacity:0;transform:none;
+  }
+  .p-state.active{display:flex;opacity:1;transform:none}
+  .p-compare{flex-direction:column;gap:16px}
   .p-div{width:auto;height:1px}
+  .p-col{gap:6px}
+  .p-k{font-size:9px;letter-spacing:.12em;line-height:1.45}
+  .p-v{font-size:clamp(25px,7.2vw,30px)}
+  .p-n{font-size:12px;line-height:1.45}
+  .p-grades{gap:10px}
+  .pg{padding:13px 14px}
   .field-row{grid-template-columns:1fr}
   .form-block{padding:24px 18px;border-radius:16px}
   .contact-list{margin-top:24px}
