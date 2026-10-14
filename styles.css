@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   КОД ТЕХ — дизайн-система
+   CODE TECH — дизайн-система
    Палитра и типографическая шкала перенесены из бренд-карты.
    Модули: Text Mask Reveal, Accordion Slider, Odometer
            (cinematic-site-components, адаптированы под палитру)
@@ -426,7 +426,7 @@ button,input,select,textarea{font:inherit;color:inherit}
   position:absolute;left:50%;top:50%;
   transform:translate(-50%,-50%);
   z-index:1;pointer-events:none;
-  width:clamp(220px,30vw,380px);
+  width:max-content;max-width:calc(100vw - 64px);
 }
 .mask-wordmark{
   display:block;white-space:nowrap;
@@ -1894,7 +1894,7 @@ button,input,select,textarea{font:inherit;color:inherit}
   .mask-section{min-height:clamp(340px,48svh,440px)}
   .mask-sticky{height:clamp(340px,48svh,440px)}
   .mask-section::before{height:64px}
-  .mask-logo{width:clamp(168px,48vw,205px)}
+  .mask-logo{width:max-content;max-width:calc(100vw - 52px)}
 
   .hero-left{width:100%}
   .pills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;width:100%}
