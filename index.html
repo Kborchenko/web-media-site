@@ -9,14 +9,17 @@
 <meta property="og:description" content="Растим разработчиков внутри компании. Обучение бесплатное, от junior до middle 1–2 года.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0A0A'/%3E%3Cpath d='M7 9l5 14 5-14' stroke='%23fff' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='23' cy='21.5' r='2.4' fill='%23FF4B00'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preload" href="hero.webp" as="image" type="image/webp" fetchpriority="high">
+<link rel="preload" href="Onest-Cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 
-<link rel="stylesheet" href="styles.css?v=20261014-mobile-panel-fix-2">
+<link rel="stylesheet" href="styles.css?v=20261014-scroll-performance-1">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="rings.js" defer></script>
 <script src="matrix-text.js" defer></script>
-<script src="main.js?v=20260821-principle-swipe-1" defer></script>
+<script src="main.js?v=20261014-scroll-performance-1" defer></script>
 <script src="company-bento.js?v=20260821-mobile-swipe-1" defer></script>
 <script src="bento-pointer.js?v=20260821-mobile-swipe-1" defer></script>
 </head>
@@ -56,7 +59,7 @@
          используется как есть, поэтому у неё родное свечение и мягкий
          край. Из кадра убран только чужой брендинг и зашитый текст. -->
     <div class="hero-bg" aria-hidden="true">
-      <img src="hero.webp" alt="">
+      <img src="hero.webp" alt="" width="1086" height="908" decoding="async" fetchpriority="high">
     </div>
 
     <div class="hero-side">
@@ -315,7 +318,7 @@
 
     <div class="accordion" id="accordion">
       <div class="acc-panel acc-panel--image active">
-        <div class="acc-bg" aria-hidden="true"><img src="assets/directions/web-development.webp" alt="" loading="lazy" decoding="async"></div>
+        <div class="acc-bg" aria-hidden="true"><img src="assets/directions/web-development.webp" alt="" width="1440" height="810" loading="lazy" decoding="async"></div>
         <div class="acc-glyph" aria-hidden="true">&lt;/&gt;</div>
         <div class="acc-vert">Веб-разработка</div>
         <div class="acc-content">
@@ -334,7 +337,7 @@
       </div>
 
       <div class="acc-panel acc-panel--image">
-        <div class="acc-bg" aria-hidden="true"><img src="assets/directions/testing-analytics.webp" alt="" loading="lazy" decoding="async"></div>
+        <div class="acc-bg" aria-hidden="true"><img src="assets/directions/testing-analytics.webp" alt="" width="1440" height="810" loading="lazy" decoding="async"></div>
         <div class="acc-glyph" aria-hidden="true">✓</div>
         <div class="acc-vert">Тестирование</div>
         <div class="acc-content">
@@ -353,7 +356,7 @@
       </div>
 
       <div class="acc-panel acc-panel--image">
-        <div class="acc-bg" aria-hidden="true"><img src="assets/directions/partners.webp" alt="" loading="lazy" decoding="async"></div>
+        <div class="acc-bg" aria-hidden="true"><img src="assets/directions/partners.webp" alt="" width="1440" height="810" loading="lazy" decoding="async"></div>
         <div class="acc-glyph" aria-hidden="true">◈</div>
         <div class="acc-vert">Партнёры</div>
         <div class="acc-content">
@@ -372,7 +375,7 @@
       </div>
 
       <div class="acc-panel acc-panel--image">
-        <div class="acc-bg" aria-hidden="true"><img src="assets/directions/internal-school.webp" alt="" loading="lazy" decoding="async"></div>
+        <div class="acc-bg" aria-hidden="true"><img src="assets/directions/internal-school.webp" alt="" width="1440" height="810" loading="lazy" decoding="async"></div>
         <div class="acc-glyph" aria-hidden="true">↗</div>
         <div class="acc-vert">Школа</div>
         <div class="acc-content">
@@ -526,7 +529,7 @@
 
   <div class="wrap growth-stack" aria-label="Путь роста специалиста">
     <article class="growth-card" style="--stack-index:0" data-growth-step="01">
-      <img class="growth-card__image" src="assets/growth/01-start-v2.webp" alt="Андроид-специалист начинает подъём по ступеням профессионального роста" loading="lazy" decoding="async">
+      <img class="growth-card__image" src="assets/growth/01-start-v2.webp" alt="Андроид-специалист начинает подъём по ступеням профессионального роста" width="1747" height="900" loading="lazy" decoding="async">
       <div class="growth-card__veil" aria-hidden="true"></div>
       <div class="growth-card__content">
         <span class="growth-card__number">01 / 06</span>
@@ -538,7 +541,7 @@
     </article>
 
     <article class="growth-card" style="--stack-index:1" data-growth-step="02">
-      <img class="growth-card__image" src="assets/growth/02-practice-v2.webp" alt="Андроид-специалист применяет знания в практической работе" loading="lazy" decoding="async">
+      <img class="growth-card__image" src="assets/growth/02-practice-v2.webp" alt="Андроид-специалист применяет знания в практической работе" width="1747" height="900" loading="lazy" decoding="async">
       <div class="growth-card__veil" aria-hidden="true"></div>
       <div class="growth-card__content">
         <span class="growth-card__number">02 / 06</span>
@@ -550,7 +553,7 @@
     </article>
 
     <article class="growth-card" style="--stack-index:2" data-growth-step="03">
-      <img class="growth-card__image" src="assets/growth/03-mentor-v2.webp" alt="Наставник помогает специалисту разобрать рабочую задачу" loading="lazy" decoding="async">
+      <img class="growth-card__image" src="assets/growth/03-mentor-v2.webp" alt="Наставник помогает специалисту разобрать рабочую задачу" width="1747" height="900" loading="lazy" decoding="async">
       <div class="growth-card__veil" aria-hidden="true"></div>
       <div class="growth-card__content">
         <span class="growth-card__number">03 / 06</span>
@@ -562,7 +565,7 @@
     </article>
 
     <article class="growth-card" style="--stack-index:3" data-growth-step="04">
-      <img class="growth-card__image" src="assets/growth/04-real-tasks-v2.webp" alt="Андроид-специалист выполняет и проверяет реальную рабочую задачу" loading="lazy" decoding="async">
+      <img class="growth-card__image" src="assets/growth/04-real-tasks-v2.webp" alt="Андроид-специалист выполняет и проверяет реальную рабочую задачу" width="1747" height="900" loading="lazy" decoding="async">
       <div class="growth-card__veil" aria-hidden="true"></div>
       <div class="growth-card__content">
         <span class="growth-card__number">04 / 06</span>
@@ -574,7 +577,7 @@
     </article>
 
     <article class="growth-card" style="--stack-index:4" data-growth-step="05">
-      <img class="growth-card__image" src="assets/growth/05-independent-result-v2.webp" alt="Андроид-специалист демонстрирует самостоятельно полученный результат" loading="lazy" decoding="async">
+      <img class="growth-card__image" src="assets/growth/05-independent-result-v2.webp" alt="Андроид-специалист демонстрирует самостоятельно полученный результат" width="1747" height="900" loading="lazy" decoding="async">
       <div class="growth-card__veil" aria-hidden="true"></div>
       <div class="growth-card__content">
         <span class="growth-card__number">05 / 06</span>
@@ -586,7 +589,7 @@
     </article>
 
     <article class="growth-card growth-card--result" style="--stack-index:5" data-growth-step="06">
-      <img class="growth-card__image" src="assets/growth/06-next-grade-v2.webp" alt="Андроид-специалист поднимается к следующему профессиональному уровню" loading="lazy" decoding="async">
+      <img class="growth-card__image" src="assets/growth/06-next-grade-v2.webp" alt="Андроид-специалист поднимается к следующему профессиональному уровню" width="1747" height="900" loading="lazy" decoding="async">
       <div class="growth-card__veil" aria-hidden="true"></div>
       <div class="growth-card__content">
         <span class="growth-card__number">06 / 06</span>
@@ -683,7 +686,7 @@
 
     <!-- Компактный логотип оставляет кольца видимыми по краям. -->
     <div class="mask-logo" aria-label="WEB MEDIA">
-      <img src="webmedia.webp" alt="">
+      <img src="webmedia.webp" alt="" width="1237" height="125" loading="lazy" decoding="async">
       <span class="mask-dot" aria-hidden="true"></span>
     </div>
   </div>

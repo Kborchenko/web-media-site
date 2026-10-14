@@ -75,7 +75,10 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+html{
+  scroll-behavior:smooth;scroll-padding-top:92px;
+  -webkit-text-size-adjust:100%;overflow-x:clip
+}
 body{
   background:var(--jet);color:var(--white);
   font-family:var(--body);font-size:16px;line-height:1.55;

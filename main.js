@@ -42,16 +42,24 @@ var PROJECT_FORM_ENDPOINT = '';
   var nav = document.getElementById('nav');
   var burger = document.getElementById('burger');
   var links = document.querySelector('.nav-links');
+  var navAnchors = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+  var navFrame = 0;
 
-  function onScroll() {
+  function updateNavigation() {
+    navFrame = 0;
     nav.classList.toggle('solid', window.scrollY > 40);
     // в самом верху ни один пункт меню не подсвечен
     if (window.scrollY < 120) {
-      document.querySelectorAll('.nav-links a.on').forEach(function (a) { a.classList.remove('on'); });
+      navAnchors.forEach(function (a) { a.classList.remove('on'); });
     }
   }
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
+
+  function requestNavigationUpdate() {
+    if (!navFrame) navFrame = window.requestAnimationFrame(updateNavigation);
+  }
+
+  updateNavigation();
+  window.addEventListener('scroll', requestNavigationUpdate, { passive: true });
 
   burger.addEventListener('click', function () {
     var open = links.classList.toggle('open');
@@ -64,8 +72,27 @@ var PROJECT_FORM_ENDPOINT = '';
     }
   });
 
+  // Плавные переходы по внутренним ссылкам. Колесо, тач и инерция
+  // остаются полностью нативными; отключение анимации учитывает ОС.
+  document.addEventListener('click', function (event) {
+    var anchor = event.target.closest('a[href^="#"]');
+    if (!anchor || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+    var hash = anchor.getAttribute('href');
+    if (!hash || hash === '#') return;
+
+    var target = document.querySelector(hash);
+    if (!target) return;
+
+    event.preventDefault();
+    var navOffset = nav ? nav.getBoundingClientRect().height + 12 : 0;
+    var targetTop = target.getBoundingClientRect().top + window.scrollY - navOffset;
+    window.scrollTo({ top: Math.max(0, targetTop), behavior: reduced ? 'auto' : 'smooth' });
+
+    if (window.location.hash !== hash) window.history.pushState(null, '', hash);
+  });
+
   // подсветка активного пункта меню
-  var navAnchors = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
   var sections = navAnchors
     .map(function (a) { return document.querySelector(a.getAttribute('href')); })
     .filter(Boolean);
