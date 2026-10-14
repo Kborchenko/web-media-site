@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   CODE TECH — дизайн-система
+   CODETECHNO — дизайн-система
    Палитра и типографическая шкала перенесены из бренд-карты.
    Модули: Text Mask Reveal, Accordion Slider, Odometer
            (cinematic-site-components, адаптированы под палитру)
@@ -431,7 +431,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .mask-wordmark{
   display:block;white-space:nowrap;
   font-family:var(--title);font-weight:700;
-  font-size:clamp(44px,7vw,88px);line-height:.9;letter-spacing:-.055em;
+  font-size:clamp(36px,7vw,88px);line-height:.9;letter-spacing:-.055em;
   color:var(--white);text-shadow:0 0 40px rgba(0,0,0,.85);
 }
 /* Точка сидит на базовой линии вордмарка и мягко мигает. */

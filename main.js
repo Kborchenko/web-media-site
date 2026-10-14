@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   CODE TECH — сценарии
+   CODETECHNO — сценарии
    Модули cinematic-site-components, адаптированные под проект:
      01 Text Mask Reveal · 02 Sticky Stack Narrative
      11 Accordion Slider · 16 Spotlight Border Cards
@@ -594,7 +594,7 @@ var PROJECT_FORM_ENDPOINT = '';
   var companyStoryMain = document.querySelector('[data-company-cursor-grid]');
   if (companyStoryMain) mountCompanyCursorGrid(companyStoryMain);
 
-  /* ═══ Интерактивная история CODE TECH ═══
+  /* ═══ Интерактивная история CODETECHNO ═══
      Один компонент управляет активным этапом, счётчиком и прогрессом.
      Клавиатурное переключение остаётся мгновенным; мышь и клик получают
      короткую прерываемую анимацию только transform/opacity. */
