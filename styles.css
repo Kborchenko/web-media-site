@@ -1437,9 +1437,12 @@ button,input,select,textarea{font:inherit;color:inherit}
 .company-story__brand{
   font-family:var(--title);font-size:clamp(104px,13.2vw,210px);font-weight:700;
   line-height:.68;letter-spacing:-.055em;color:#f4f4f4;white-space:nowrap;
-  transform:scaleX(.84);transform-origin:left center;
 }
-.company-story__brand span{color:var(--bright)}
+.company-story__brand-line{
+  display:block;width:max-content;transform:scaleX(.84);transform-origin:left center;
+}
+.company-story__brand-line--techno{transform:scaleX(.69)}
+.company-story__brand b{color:var(--bright)}
 .company-story__copy{
   min-width:0;padding:4px 0 0 clamp(26px,3.2vw,52px);border-left:1px solid #202124;
 }
@@ -1757,7 +1760,7 @@ button,input,select,textarea{font:inherit;color:inherit}
   .company-story{min-height:0;padding:92px 0 72px}
   .company-story__main{grid-template-columns:1fr;gap:48px}
   .company-story__brand-block{padding-top:0}
-  .company-story__brand{font-size:clamp(58px,16vw,88px);transform:scaleX(.86);transform-origin:left center}
+  .company-story__brand{font-size:clamp(58px,16vw,88px)}
   .company-story__copy{
     display:grid;grid-template-columns:minmax(0,.75fr) minmax(280px,1.25fr);gap:36px;
     align-items:start;padding-left:0;border-left:0;
@@ -1818,7 +1821,6 @@ button,input,select,textarea{font:inherit;color:inherit}
   .company-story__brand-block{overflow:visible}
   .company-story__brand{
     font-size:clamp(76px,11.5vw,88px);line-height:.72;
-    transform:scaleX(.88);transform-origin:left center;
   }
   .company-story__copy{
     grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);
@@ -1931,7 +1933,6 @@ button,input,select,textarea{font:inherit;color:inherit}
   .company-story__brand-block{padding-top:8px;padding-bottom:8px;overflow:visible}
   .company-story__brand{
     font-size:clamp(50px,14.4vw,58px);line-height:.8;
-    transform:scaleX(.86);transform-origin:left center;
   }
   .company-story__copy{display:block}
   .company-story__copy h2{margin-top:24px;font-size:clamp(34px,10vw,48px)}
