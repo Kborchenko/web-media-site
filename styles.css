@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   WEB MEDIA — дизайн-система
+   КОД ТЕХ — дизайн-система
    Палитра и типографическая шкала перенесены из бренд-карты.
    Модули: Text Mask Reveal, Accordion Slider, Odometer
            (cinematic-site-components, адаптированы под палитру)
@@ -428,9 +428,11 @@ button,input,select,textarea{font:inherit;color:inherit}
   z-index:1;pointer-events:none;
   width:clamp(220px,30vw,380px);
 }
-.mask-logo img{
-  width:100%;height:auto;
-  filter:drop-shadow(0 0 40px rgba(0,0,0,.85));
+.mask-wordmark{
+  display:block;white-space:nowrap;
+  font-family:var(--title);font-weight:700;
+  font-size:clamp(44px,7vw,88px);line-height:.9;letter-spacing:-.055em;
+  color:var(--white);text-shadow:0 0 40px rgba(0,0,0,.85);
 }
 /* Точка сидит на базовой линии вордмарка и мягко мигает. */
 .mask-dot{
