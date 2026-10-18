@@ -210,7 +210,10 @@ window.MagicRings = (function () {
       host.addEventListener('click', onClick);
     }
 
-    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // На touch-устройствах непрерывный WebGL-рендер конкурирует с нативным
+    // скроллом. Там оставляем один статичный кадр — композиция сохраняется,
+    // а GPU не перерисовывает большой canvas во время каждого свайпа.
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce), (hover: none), (pointer: coarse)').matches;
     var elapsed = 0, lastT = 0, frame = 0;
     var visible = false, pageVisible = !document.hidden;
 

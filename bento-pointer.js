@@ -29,6 +29,7 @@
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var mobilePerformance = !finePointer;
   var spotlight = null;
   var spotlightFrame = 0;
   var latestPointer = null;
@@ -110,6 +111,7 @@
   }
 
   function spawnParticles(card, clientX, clientY) {
+    if (mobilePerformance) return;
     if (card.querySelector('.bento-particle')) return;
     var rect = card.getBoundingClientRect();
     var localX = typeof clientX === 'number' ? clientX - rect.left : null;
@@ -123,6 +125,7 @@
   }
 
   function createRipple(card, clientX, clientY) {
+    if (mobilePerformance) return;
     var rect = card.getBoundingClientRect();
     var x = clientX - rect.left;
     var y = clientY - rect.top;

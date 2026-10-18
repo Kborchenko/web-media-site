@@ -17,6 +17,7 @@
   var SWIPE_VELOCITY = .18;
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var mobilePerformance = !finePointer;
   var spotlight = null;
   var pointerFrame = 0;
   var latestPointer = null;
@@ -60,6 +61,7 @@
   }
 
   function spawnParticles(step, clientX, clientY) {
+    if (mobilePerformance) return;
     if (step.querySelector('.company-bento-particle')) return;
     var rect = step.getBoundingClientRect();
     var originX = typeof clientX === 'number' ? clientX - rect.left : rect.width / 2;
@@ -99,6 +101,7 @@
   }
 
   function ripple(step, clientX, clientY) {
+    if (mobilePerformance) return;
     var rect = step.getBoundingClientRect();
     var x = clientX - rect.left;
     var y = clientY - rect.top;

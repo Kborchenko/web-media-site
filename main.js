@@ -20,6 +20,7 @@ var PROJECT_FORM_ENDPOINT = '';
 
   var hasGsap = typeof window.gsap !== 'undefined';
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var mobilePerformance = window.matchMedia('(hover: none), (pointer: coarse)').matches || window.innerWidth <= 560;
   if (hasGsap && window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
 
   /* ═══ Matrix Text — расшифровка заголовков ═══
@@ -241,7 +242,7 @@ var PROJECT_FORM_ENDPOINT = '';
   /* Один непрерывный расчёт активного принципа надёжнее нескольких
      пересекающихся ScrollTrigger: не пропускает шаги при быстром скролле,
      переходе по якорю и прокрутке в обратную сторону. */
-  if (cards.length) {
+  if (cards.length && !mobilePerformance) {
     var principleFrame = 0;
 
     function syncPrincipleToScroll() {
@@ -875,13 +876,20 @@ var PROJECT_FORM_ENDPOINT = '';
       if (!growthFrame) growthFrame = window.requestAnimationFrame(syncGrowthStack);
     }
 
-    measureGrowthStack();
-    window.addEventListener('scroll', requestGrowthSync, { passive: true });
-    window.addEventListener('resize', measureGrowthStack);
-    window.addEventListener('load', measureGrowthStack, { once: true });
+    if (mobilePerformance) {
+      growthCards.forEach(function (card) {
+        card.style.transform = '';
+        card.style.willChange = '';
+      });
+    } else {
+      measureGrowthStack();
+      window.addEventListener('scroll', requestGrowthSync, { passive: true });
+      window.addEventListener('resize', measureGrowthStack);
+      window.addEventListener('load', measureGrowthStack, { once: true });
 
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(measureGrowthStack);
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(measureGrowthStack);
+      }
     }
   }
 
@@ -1007,7 +1015,7 @@ var PROJECT_FORM_ENDPOINT = '';
   });
 
   /* ═══ Появление секций ═══ */
-  if (hasGsap && window.ScrollTrigger) {
+  if (hasGsap && window.ScrollTrigger && !mobilePerformance && !reduced) {
     gsap.utils.toArray('.sec-head, .form-block').forEach(function (el) {
       gsap.from(el, {
         opacity: 0, y: 26, duration: .8, ease: 'power2.out',
